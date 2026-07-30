@@ -1,0 +1,4 @@
+@import url("login.css");
+.register-card { width:min(100%,470px); padding-top:2rem; }
+.register-card .auth-form label { margin-top:.8rem; }
+.register-card .auth-submit { margin-top:1.25rem; }
