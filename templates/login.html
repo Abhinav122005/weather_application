@@ -20,7 +20,7 @@
         <p class="auth-subtitle">Pick up exactly where you left off.</p>
 
         {% if messages %}{% for message in messages %}
-            <div class="alert alert-danger">{{ message }}</div>
+            <div class="alert {% if message.tags == 'error' %}alert-danger{% elif message.tags == 'success' %}alert-success{% else %}alert-info{% endif %}">{{ message }}</div>
         {% endfor %}{% endif %}
         {% if msg %}<div class="alert alert-danger">{{ msg }}</div>{% endif %}
 

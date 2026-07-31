@@ -15,6 +15,10 @@ def home(req):
     lon = req.GET.get("lon")
     city = req.GET.get("city", "")
 
+    if (lat and lon) or city.strip():
+        if 'user_id' not in req.session:
+            return redirect('register')
+
     if lat and lon:
         url = (
             f"https://api.openweathermap.org/data/2.5/weather"
