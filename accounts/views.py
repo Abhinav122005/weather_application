@@ -38,7 +38,12 @@ def register(req):
             messages.success(req,"Registration Successful")
             return redirect('login')
         else:
-            return render(req, 'register.html',{'msg':serializer.errors})
+            error_msg = "Invalid data provided."
+            for field, errors in serializer.errors.items():
+                if errors:
+                    error_msg = str(errors[0])
+                    break
+            return render(req, 'register.html',{'msg': error_msg})
 
 
     return render(req, 'register.html')
