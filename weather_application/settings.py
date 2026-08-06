@@ -88,6 +88,9 @@ DATABASES = {
         'PASSWORD' : env('PASSWORD'),
         'HOST':env('HOST'),
         'PORT': env('DB_PORT'),
+        'InternalDatabaseURL':env('InternalDatabaseURL'),
+        'ExternalDatabaseURL':env('ExternalDatabaseURL'),
+        'PSQLCommand':env('PSQLCommand'),
     }
 }
 
